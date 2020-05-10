@@ -6,10 +6,11 @@ addons:
   mariadb: '10.3'
   hosts:
     - moodle.test
-  firefox: latest
+#  firefox: latest
   apt:
     packages:
       - redis-server
+      - openjdk-8-jre-headless
       - chromium-chromedriver
 services:
   - memcached
@@ -28,12 +29,12 @@ env:
 # Alternate tests with MySQL and PostgreSQL
 matrix:
   include:
+  #  - php: 7.3
+  #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/availability/condition/ipaddress
+  #  - php: 7.3
+  #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/jitsi
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/availability/condition/ipaddress BHPFL=chrome
-    - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/jitsi BHPFL=chrome
-    - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen BHPFL=chrome
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
 
 before_install:
   - phpenv config-rm xdebug.ini
@@ -57,4 +58,4 @@ script:
   - moodle-plugin-ci mustache
   - moodle-plugin-ci grunt
   - moodle-plugin-ci phpunit
-  - moodle-plugin-ci behat --profile $BHPFL
+  - moodle-plugin-ci behat --profile chrome
