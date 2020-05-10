@@ -41,7 +41,7 @@ before_install:
   - phpenv config-rm xdebug.ini
   - cd ../..
   - pwd
-  - cd AdrianoRuseler/moodle/availability/condition/ipaddress
+  - cd ../AdrianoRuseler/moodle/availability/condition/ipaddress
   - pwd
   - ls
   - nvm install 8.9;
