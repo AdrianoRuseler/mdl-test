@@ -35,17 +35,17 @@ matrix:
     #- php: 7.2
     #  env: DB=pgsql MOODLE_BRANCH=MOODLE_37_STABLE
     - php: 7.2
-      env: DB=pgsql MOODLE_BRANCH=master
+      env: DB=pgsql MOODLE_BRANCH=master plgdir=moodle/availability/condition/ipaddress
 
 before_install:
   - phpenv config-rm xdebug.ini
+  - mv $plgdir/* .
+  - rm -rf moodle
   - cd ../..
   - nvm install 8.9;
     nvm use 8.9;
     composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2;
-  - echo $PATH
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
-  - echo $PATH
 install:
   - moodle-plugin-ci install -vvv
   #- moodle-plugin-ci install
