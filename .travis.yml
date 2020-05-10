@@ -43,8 +43,9 @@ before_install:
   - nvm install 8.9;
     nvm use 8.9;
     composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2;
+  - echo $PATH
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
-
+  - echo $PATH
 install:
   - moodle-plugin-ci install -vvv
   #- moodle-plugin-ci install
