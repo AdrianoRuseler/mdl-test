@@ -40,7 +40,7 @@ matrix:
 before_install:
   - phpenv config-rm xdebug.ini
   - cd ../..
-  - cd /home/travis/build/AdrianoRuseler/moodle
+  - cd /home/travis/build/AdrianoRuseler/moodle/availability/condition/ipaddress
   - pwd
   - ls
   - nvm install 8.9;
