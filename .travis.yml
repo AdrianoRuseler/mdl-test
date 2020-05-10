@@ -29,13 +29,15 @@ env:
 matrix:
   include:
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE plgdir=moodle/availability/condition/ipaddress
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/availability/condition/ipaddress
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE plgdir=moodle/mod/jitsi
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/jitsi
+    - php: 7.3
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
 
 before_install:
   - phpenv config-rm xdebug.ini
-  - mv $plgdir/* .
+  - mv $PLUGIN_DIR/* .
   - rm -rf moodle
   - cd ../..
   - nvm install 8.9;
