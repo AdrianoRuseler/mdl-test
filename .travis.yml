@@ -1,19 +1,21 @@
 language: php
 sudo: required
-dist: trusty
+dist: bionic
 
 addons:
+  mariadb: '10.3'
   hosts:
     - moodle.test
-  firefox: "35.0.1"
-  postgresql: "9.4"
+  firefox: latest
+  # postgresql: "9.4"
   apt:
     packages:
-      - oracle-java9-installer
-      - oracle-java9-set-default
+    #  - oracle-java9-installer
+    #  - oracle-java9-set-default
       - redis-server
 
 services:
+  - memcached
   - redis-server
 
 cache:
@@ -29,23 +31,20 @@ env:
 # Alternate tests with MySQL and PostgreSQL
 matrix:
   include:
-    # PHP 7.0
-    #- php: 7.0
-     # env: DB=mysqli MOODLE_BRANCH=MOODLE_35_STABLE
-    #- php: 7.2
-    #  env: DB=pgsql MOODLE_BRANCH=MOODLE_37_STABLE
-    - php: 7.2
-      env: DB=pgsql MOODLE_BRANCH=master
+    - php: 7.3
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE plgdir=moodle/availability/condition/ipaddress
+    #- php: 7.3
+    #  env: DB=pgsql MOODLE_BRANCH=master plgdir=moodle/availability/condition/ipaddress
 
 before_install:
   - phpenv config-rm xdebug.ini
+  - mv $plgdir/* .
+  - rm -rf moodle
   - cd ../..
   - nvm install 8.9;
     nvm use 8.9;
     composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2;
-  - echo $PATH
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
-  - echo $PATH
 install:
   - moodle-plugin-ci install -vvv
   #- moodle-plugin-ci install
