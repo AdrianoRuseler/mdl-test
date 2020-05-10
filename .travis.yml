@@ -39,9 +39,9 @@ matrix:
 
 before_install:
   - phpenv config-rm xdebug.ini
-  - git submodule update --init
-  - git pull --recurse-submodules
   - cd ../..
+  - pwd
+  - ls
   - nvm install 8.9;
     nvm use 8.9;
     composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2;
