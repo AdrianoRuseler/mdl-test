@@ -9,12 +9,13 @@ addons:
   postgresql: "9.4"
   apt:
     packages:
-      - oracle-java9-installer
-      - oracle-java9-set-default
+    #  - oracle-java9-installer
+    #  - oracle-java9-set-default
       - redis-server
 
 services:
   - redis-server
+  - mysql
 
 cache:
   directories:
@@ -35,7 +36,7 @@ matrix:
     #- php: 7.2
     #  env: DB=pgsql MOODLE_BRANCH=MOODLE_37_STABLE
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE plgdir=moodle/availability/condition/ipaddress
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE plgdir=moodle/availability/condition/ipaddress
     #- php: 7.3
     #  env: DB=pgsql MOODLE_BRANCH=master plgdir=moodle/availability/condition/ipaddress
 
