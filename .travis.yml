@@ -33,8 +33,10 @@ matrix:
   #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/availability/condition/ipaddress
   #  - php: 7.3
   #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/jitsi
+  #  - php: 7.3
+  #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/blocks/completion_progress
 
 before_install:
   - phpenv config-rm xdebug.ini
