@@ -1,3 +1,4 @@
+# https://blackboard-open-source.github.io/moodle-plugin-ci/TravisFileExplained.html
 language: php
 
 addons:
