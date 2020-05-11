@@ -1,5 +1,5 @@
 language: php
-#sudo: required
+
 dist: bionic
 
 addons:
@@ -35,8 +35,10 @@ matrix:
   #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/jitsi
   #  - php: 7.3
   #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
+  #  - php: 7.3
+  #    env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/blocks/completion_progress
     - php: 7.3
-      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/blocks/completion_progress
+      env: DB=mariadb MOODLE_BRANCH=MOODLE_38_STABLE PLUGIN_DIR=moodle/mod/attendance
 
 before_install:
   - phpenv config-rm xdebug.ini
