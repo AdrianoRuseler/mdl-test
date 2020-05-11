@@ -33,16 +33,19 @@ env:
 # Alternate tests with MySQL and PostgreSQL
 matrix:
   include:
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/availability/condition/ipaddress
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/mod/jitsi
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/blocks/completion_progress
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/mod/attendance
+
     - php: 7.3
-      env: PLUGIN_DIR=moodle/availability/condition/ipaddress
-    - php: 7.3
-      env: PLUGIN_DIR=moodle/mod/jitsi
-    - php: 7.3
-      env: PLUGIN_DIR=moodle/lib/editor/atto/plugins/fullscreen
-    - php: 7.3
-      env: PLUGIN_DIR=moodle/blocks/completion_progress
-    - php: 7.3
-      env: PLUGIN_DIR=moodle/mod/attendance
+      env: PLUGIN_DIR=moodle/mod/hvp
 
 before_install:
   - phpenv config-rm xdebug.ini
