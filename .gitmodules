@@ -22,3 +22,43 @@
 	path = moodle/mod/hvp
 	url = https://github.com/h5p/h5p-moodle-plugin.git
 	branch = stable
+[submodule "moodle/lib/editor/atto/plugins/cloze"]
+	path = moodle/lib/editor/atto/plugins/cloze
+	url = https://github.com/dthies/moodle-atto_cloze.git
+	branch = master
+[submodule "moodle/blocks/xp"]
+	path = moodle/blocks/xp
+	url = https://github.com/FMCorz/moodle-block_xp.git
+	branch = master
+[submodule "moodle/mod/customcert"]
+	path = moodle/mod/customcert
+	url = https://github.com/markn86/moodle-mod_customcert.git
+	branch = MOODLE_38_STABLE
+[submodule "moodle/enrol/auto"]
+	path = moodle/enrol/auto
+	url = https://github.com/bynare/moodle-enrol_auto.git
+	branch = master
+[submodule "moodle/question/type/oumultiresponse"]
+	path = moodle/question/type/oumultiresponse
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse.git
+	branch = master
+[submodule "moodle/mod/scheduler"]
+	path = moodle/mod/scheduler
+	url = https://github.com/bostelm/moodle-mod_scheduler.git
+	branch = master
+[submodule "moodle/theme/adaptable"]
+	path = moodle/theme/adaptable
+	url = https://gitlab.com/jezhops/moodle-theme_adaptable.git
+	branch = master
+[submodule "moodle/mod/choicegroup"]
+	path = moodle/mod/choicegroup
+	url = https://github.com/ndunand/moodle-mod_choicegroup.git
+	branch = master
+[submodule "moodle/mod/booking"]
+	path = moodle/mod/booking
+	url = https://github.com/dasistwas/moodle-mod_booking.git
+	branch = master
+[submodule "moodle/mod/studentquiz"]
+	path = moodle/mod/studentquiz
+	url = https://github.com/frankkoch/moodle-mod_studentquiz.git
+	branch = master

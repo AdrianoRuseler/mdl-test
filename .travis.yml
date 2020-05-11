@@ -44,9 +44,30 @@ matrix:
 #    - php: 7.3
 #      env: PLUGIN_DIR=moodle/mod/attendance
 
+#    - php: 7.3
+#      env: PLUGIN_DIR=moodle/mod/hvp
+      
     - php: 7.3
-      env: PLUGIN_DIR=moodle/mod/hvp
-
+      env: PLUGIN_DIR=moodle/lib/editor/atto/plugins/cloze
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/blocks/xp
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/mod/customcert
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/enrol/auto
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/question/type/oumultiresponse
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/mod/scheduler
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/theme/adaptable
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/mod/choicegroup
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/mod/booking
+    - php: 7.3
+      env: PLUGIN_DIR=moodle/mod/studentquiz
+      
 before_install:
   - phpenv config-rm xdebug.ini
   - mv $PLUGIN_DIR/* .
@@ -68,7 +89,7 @@ script:
   - moodle-plugin-ci phpmd
   - moodle-plugin-ci codechecker
   - moodle-plugin-ci savepoints
-  - moodle-plugin-ci mustache
-  - moodle-plugin-ci grunt || false
+ # - moodle-plugin-ci mustache
+ # - moodle-plugin-ci grunt
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat --profile chrome
